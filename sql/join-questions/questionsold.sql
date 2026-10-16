@@ -1,0 +1,219 @@
+create database company_db;
+use company_db;
+CREATE TABLE Department (
+    dept_id INT PRIMARY KEY ,
+    dept_name VARCHAR(50),
+    location VARCHAR(50)
+);
+INSERT INTO Department (dept_id, dept_name, location)
+VALUES
+(1, 'IT', 'Jaipur'),
+(2, 'HR', 'Jodhpur'),
+(3, 'Finance', 'Delhi'),
+(4, 'Marketing', 'Mumbai'),
+(5, 'Sales', 'Pune'),
+(6, 'Operations', 'Bangalore'),
+(7, 'Customer Support', 'Hyderabad'),
+(8, 'Research', 'Chennai'),
+(9, 'Development', 'Noida'),
+(10, 'Administration', 'Gurugram'),
+(11, 'Legal', 'Kolkata'),
+(12, 'Accounts', 'Ahmedabad'),
+(13, 'Recruitment', 'Jaipur'),
+(14, 'Training', 'Jodhpur'),
+(15, 'Quality Assurance', 'Delhi'),
+(16, 'Product Management', 'Mumbai'),
+(17, 'Business Analysis', 'Pune'),
+(18, 'Data Analytics', 'Bangalore'),
+(19, 'Cyber Security', 'Hyderabad'),
+(20, 'Cloud Computing', 'Chennai'),
+(21, 'Networking', 'Noida'),
+(22, 'Database Administration', 'Gurugram'),
+(23, 'Web Development', 'Kolkata'),
+(24, 'Mobile Development', 'Ahmedabad'),
+(25, 'UI UX Design', 'Jaipur'),
+(26, 'Graphic Design', 'Jodhpur'),
+(27, 'Content Writing', 'Delhi'),
+(28, 'SEO', 'Mumbai'),
+(29, 'Social Media', 'Pune'),
+(30, 'Digital Advertising', 'Bangalore'),
+(31, 'Public Relations', 'Hyderabad'),
+(32, 'Procurement', 'Chennai'),
+(33, 'Supply Chain', 'Noida'),
+(34, 'Logistics', 'Gurugram'),
+(35, 'Inventory', 'Kolkata'),
+(36, 'Manufacturing', 'Ahmedabad'),
+(37, 'Production', 'Jaipur'),
+(38, 'Maintenance', 'Jodhpur'),
+(39, 'Engineering', 'Delhi'),
+(40, 'Project Management', 'Mumbai'),
+(41, 'Risk Management', 'Pune'),
+(42, 'Compliance', 'Bangalore'),
+(43, 'Internal Audit', 'Hyderabad'),
+(44, 'Taxation', 'Chennai'),
+(45, 'Payroll', 'Noida'),
+(46, 'Employee Relations', 'Gurugram'),
+(47, 'Learning and Development', 'Kolkata'),
+(48, 'Technical Support', 'Ahmedabad'),
+(49, 'Innovation', 'Jaipur'),
+(50, 'Business Development', 'Jodhpur');
+
+select * from Department;
+
+create table Employee(
+	emp_id int primary key,
+    emp_name VARCHAR(100),
+	 gender VARCHAR(10),
+	 salary DECIMAL(10,2),
+	hire_date DATE,
+    department_id int,
+	foreign key (department_id) references Department(dept_id)
+
+
+);
+
+
+INSERT INTO Employee
+(emp_id, emp_name, gender, salary, hire_date, department_id)
+VALUES
+(101, 'Rahul Sharma', 'Male', 45000, '2022-01-15', 1),
+(102, 'Priya Singh', 'Female', 55000, '2021-03-20', 1),
+(103, 'Amit Verma', 'Male', 40000, '2023-06-10', null),
+(104, 'Neha Gupta', 'Female', 38000, '2022-08-05', 2),
+(105, 'Rohit Kumar', 'Male', 62000, '2020-11-12', 3),
+(106, 'Sneha Jain', 'Female', 60000, '2021-07-18', 3),
+(107, 'Karan Mehta', 'Male', 48000, '2023-02-25', 4),
+(108, 'Pooja Patel', 'Female', 50000, '2022-09-14', 5),
+(109, 'Vikas Yadav', 'Male', 35000, '2024-01-08', NULL),
+(110, 'Anjali Joshi', 'Female', 52000, '2020-12-01', 1),
+(111, 'Mohit Agarwal', 'Male', 47000, '2022-04-11', 6),
+(112, 'Riya Saini', 'Female', 58000, '2021-10-19', 7),
+(113, 'Deepak Chauhan', 'Male', 42000, '2023-05-22', 8),
+(114, 'Kavita Rao', 'Female', 65000, '2019-08-16', 9),
+(115, 'Arjun Malhotra', 'Male', 72000, '2020-06-30', Null),
+(116, 'Simran Kaur', 'Female', 44000, '2022-02-17', 11),
+(117, 'Manish Tiwari', 'Male', 39000, '2024-03-05', 12),
+(118, 'Divya Mishra', 'Female', 53000, '2021-12-09', 13),
+(119, 'Sandeep Joshi', 'Male', 49000, '2023-07-21', 14),
+(120, 'Nisha Kapoor', 'Female', 61000, '2020-05-13', 15),
+(121, 'Varun Saxena', 'Male', 56000, '2022-11-28', 16),
+(122, 'Meena Kumari', 'Female', 46000, '2023-01-12', Null),
+(123, 'Rakesh Soni', 'Male', 68000, '2021-04-07', 18),
+(124, 'Tanya Arora', 'Female', 75000, '2019-09-23', 19),
+(125, 'Nitin Bansal', 'Male', 51000, '2022-06-14', 20),
+(126, 'Shweta Das', 'Female', 43000, '2024-02-19', 21),
+(127, 'Akash Roy', 'Male', 59000, '2020-10-06', 22),
+(128, 'Komal Shah', 'Female', 48000, '2023-08-15', 23),
+(129, 'Yash Thakur', 'Male', 64000, '2021-01-25', 24),
+(130, 'Isha Goyal', 'Female', 57000, '2022-12-03', 25),
+(131, 'Varsha Nair', 'Female', 41000, '2023-04-18', 26),
+(132, 'Abhishek Pal', 'Male', 52000, '2021-06-29', 27),
+(133, 'Sakshi Bhatia', 'Female', 62000, '2020-03-11', 28),
+(134, 'Harsh Vardhan', 'Male', 46000, '2024-04-01', 29),
+(135, 'Payal Jain', 'Female', 54000, '2022-07-07', 30),
+(136, 'Gaurav Mishra', 'Male', 71000, '2019-11-20', 31),
+(137, 'Ritu Sharma', 'Female', 49000, '2023-09-09', 32),
+(138, 'Ankit Saini', 'Male', 58000, '2021-02-14', 33),
+(139, 'Preeti Verma', 'Female', 45000, '2022-05-26', 34),
+(140, 'Sahil Khanna', 'Male', 67000, '2020-08-31', 35),
+(141, 'Monika Yadav', 'Female', 53000, '2023-03-16', 36),
+(142, 'Rajat Sharma', 'Male', 61000, '2021-09-12', 37),
+(143, 'Aarti Gupta', 'Female', 47000, '2024-05-10', 38),
+(144, 'Pankaj Meena', 'Male', 76000, '2019-04-22', 39),
+(145, 'Kriti Singh', 'Female', 69000, '2020-07-17', 40),
+(146, 'Lokesh Jain', 'Male', 50000, '2022-10-04', 41),
+(147, 'Muskan Khan', 'Female', 63000, '2021-08-24', 42),
+(148, 'Tarun Patel', 'Male', 55000, '2023-11-06', 43),
+(149, 'Bhavna Joshi', 'Female', 48000, '2022-03-30', 44),
+(150, 'Prateek Rao', 'Male', 66000, '2020-02-10', 45),
+(151, 'Ayesha Khan', 'Female', 59000, '2021-05-15', 46),
+(152, 'Ravi Kumar', 'Male', 43000, '2024-06-01', 47),
+(153, 'Pallavi Das', 'Female', 72000, '2019-12-19', 48),
+(154, 'Chirag Shah', 'Male', 57000, '2022-04-28', 49),
+(155, 'Nandini Rao', 'Female', 65000, '2020-09-08', 50);
+
+select
+ e.*,
+ d.dept_name 
+ from Employee e 
+inner join Department
+ d
+on d.dept_id=e.department_id
+;
+
+select
+ e.*,
+ d.dept_name 
+ from Employee e 
+left join Department
+ d
+on d.dept_id=e.department_id
+;
+
+select
+ e.*,
+ d.dept_name 
+ from Employee e 
+right join Department
+ d
+on d.dept_id=e.department_id
+;
+
+
+select d.dept_name,count(e.emp_id) as empCount from Employee e 
+inner join Department d
+on d.dept_id=e.department_id
+group by d.dept_name
+;
+
+
+
+select 
+	p.product_name,
+    sum(o.Quantity) as totProduct
+from 
+products p
+inner join orders o
+on
+o.product_id=p.Product_ID
+group by product_name
+;
+
+
+select 
+c.Customer_Name,
+count(o.Order_ID) as orderCount,
+sum(p.Price*o.Quantity) as spendValue
+from customers c
+inner join orders o on 
+c.Customer_ID=o.Customer_ID
+inner join products p
+on 
+p.Product_ID=o.Product_ID
+group by c.Customer_Name
+;
+
+
+
+
+select c.Category_Name,count(p.product_id) as count from categories c
+inner join  products p
+on p.Category_ID=c.Category_ID
+group by c.Category_Name
+
+having count>5;
+
+select count(p.product_id) as count,p.Category_ID from  products p
+group by p.Category_ID
+having count>5;
+
+
+
+
+SELECT p.*
+FROM products p
+LEFT JOIN orders o
+    ON p.Product_ID = o.Product_ID
+WHERE o.Product_ID IS Not NULL;
+
+
